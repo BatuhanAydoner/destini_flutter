@@ -46,26 +46,40 @@ class _DestiniPageState extends State<DestiniPage> {
                   ),
                 ),
               )),
-          Expanded(
-              child: Padding(
-            padding: EdgeInsets.all(15.0),
-            child: FlatButton(
-              onPressed: () {},
-              child: Text("Choice 1",
-                  style: TextStyle(fontSize: 20.0, color: Colors.white)),
-              color: Colors.red,
-            ),
-          )),
-          Expanded(
-              child: Padding(
-            padding: EdgeInsets.all(15.0),
-            child: FlatButton(
-              onPressed: () {},
-              child: Text("Choice 2",
-                  style: TextStyle(fontSize: 20.0, color: Colors.white)),
-              color: Colors.blue,
-            ),
-          ))
+          Visibility(
+            visible: true,
+            child: Expanded(
+                child: Padding(
+              padding: EdgeInsets.all(15.0),
+              child: FlatButton(
+                onPressed: () {
+                  setState(() {
+                    storyBrain.nextStory(1);
+                  });
+                },
+                child: Text(storyBrain.getChoice1(),
+                    style: TextStyle(fontSize: 20.0, color: Colors.white)),
+                color: Colors.red,
+              ),
+            )),
+          ),
+          Visibility(
+            visible: storyBrain.buttonShouldBeVisible(),
+            child: Expanded(
+                child: Padding(
+              padding: EdgeInsets.all(15.0),
+              child: FlatButton(
+                onPressed: () {
+                  setState(() {
+                    storyBrain.nextStory(2);
+                  });
+                },
+                child: Text(storyBrain.getChoice2(),
+                    style: TextStyle(fontSize: 20.0, color: Colors.white)),
+                color: Colors.blue,
+              ),
+            )),
+          )
         ],
       ),
     );

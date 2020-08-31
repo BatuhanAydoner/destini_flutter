@@ -46,9 +46,35 @@ class StoryBrain {
     return _storyData[_storyNumber].choice2;
   }
 
-  void nextStory() {
-    if (_storyNumber < _storyData.length - 1) {
-      _storyNumber++;
+  void nextStory(int choiceNumber) {
+    if (choiceNumber == 1) {
+      if (_storyNumber == 0)
+        _storyNumber = 2;
+      else if (_storyNumber == 1)
+        _storyNumber = 2;
+      else if (_storyNumber == 2)
+        _storyNumber = 5;
+      else if (_storyNumber == 3 || _storyNumber == 4 || _storyNumber == 5) {
+        restart();
+      }
+    } else {
+      if (_storyNumber == 0)
+        _storyNumber = 1;
+      else if (_storyNumber == 1)
+        _storyNumber = 3;
+      else if (_storyNumber == 2) _storyNumber = 4;
     }
+  }
+
+  bool buttonShouldBeVisible() {
+    if (_storyNumber == 0 || _storyNumber == 1 || _storyNumber == 2) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  void restart() {
+    _storyNumber = 0;
   }
 }
