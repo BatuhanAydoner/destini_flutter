@@ -1,8 +1,11 @@
+import 'package:destini_flutter/StoryBrain.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(DestiniApp());
 }
+
+StoryBrain storyBrain = new StoryBrain();
 
 class DestiniApp extends StatelessWidget {
   @override
@@ -35,9 +38,12 @@ class _DestiniPageState extends State<DestiniPage> {
           Expanded(
               flex: 5,
               child: Center(
-                child: Text(
-                  "Story text will go here.",
-                  style: TextStyle(fontSize: 25.0, color: Colors.white),
+                child: Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Text(
+                    storyBrain.getStory(),
+                    style: TextStyle(fontSize: 25.0, color: Colors.white),
+                  ),
                 ),
               )),
           Expanded(
