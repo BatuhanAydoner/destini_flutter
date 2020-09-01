@@ -1,4 +1,4 @@
-# destini_flutter
+# Destini Flutter
 
 A new Flutter application.
 
