@@ -2,7 +2,7 @@
 <img src="https://github.com/BatuhanAydonerDev/destini_flutter/blob/master/destini_flutter_gif.gif?raw=true" width="300"/>
 
 ## My Goal
-I built a choose your own adventure game. In the process, I applied my knowledge to use Dart OOp principles to build a well organized project.
+I built a choose adventure game. In the process, I applied my knowledge to use Dart OOp principles to build a well organized project.
 
 ## Getting Started
 
